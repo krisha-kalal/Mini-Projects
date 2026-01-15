@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NoteStack</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;700&amp;family=Montserrat:wght@300;400;600&amp;display=swap" rel="stylesheet">
+</head>
+<body>
+    <header><h1>NoteStack</h1></header>
+    <img src="flower.svg" class="flower f1">
+    <img src="flower.svg" class="flower f2">
+    <main>
+        <section id="todo-list">
+            <h2>To-Do List</h2>
+            <input type="text" id="new-task" placeholder="Enter new task">
+            <button onclick="addTask()">Add Task</button>
+            <ul id="task-list"></ul>
+        </section>
+        <section id="analytics">
+            <h2>Progress</h2>
+            <p>Track your note-taking habits and productivity with our built-in progress tool.</p>
+            <div id="progress-area"><p id="progress-text">Your today's progress: 0% completed</p></div>
+            <p>Total Tasks: <span id="total-count">0</span>   |   Completed: <span id="completed-count">0</span>   |   Pending: <span id="pending-count">0</span></p>
+            <button onclick="endDay()">End my day!</button>
+        </section>
+        <section class="thank-you" id="thank-you" style="display: none;">
+            <h2>Thank You for Visiting NoteStack!</h2>
+            <p>We hope NoteStack helps you stay organized and productive. Happy note-taking!</p>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 NoteStack. All rights reserved.</p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
