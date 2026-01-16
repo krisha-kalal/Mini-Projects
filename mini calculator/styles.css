@@ -1,0 +1,128 @@
+*{
+    box-sizing: border-box;
+}
+body{
+    overflow: hidden;
+    background: linear-gradient(135deg, #ff9de2, #b983ff);
+    font-family: Caveat;
+    font-size: xx-large;
+    min-height: 100vh;
+    display:flex;
+    justify-content: center;
+}
+h1{
+    color: black;
+    text-align: center;
+    margin-bottom: 15px;
+    letter-spacing: 1px;
+}
+#buttons{
+    width: 400px;
+    padding: 20px;
+    backdrop-filter: blur(12px);
+    border-radius: 20px;
+    border: 3px solid black;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.745);
+    text-align: center;
+    animation: pop 0.3s ease;
+}
+input{
+    width: 90%;
+    height: 70px;
+    padding: 12px;
+    margin-bottom: 15px;
+    border-radius: 12px;
+    border: none;
+    font-size: 26px;
+    text-align: right;
+    background-color: #ffffff;
+    color: #260035;
+    outline: none;
+}
+button{
+    width: 60px;
+    height: 55px;
+    margin: 6px;
+    border-radius: 12px;
+    border: none;
+    background: #260035;
+    color: white;
+    font-size: x-large;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.25);
+}
+button:hover{
+    background: #ffcdfd;
+    color: #260035;
+    transform: translateY(-2px);
+}
+button.op{
+    background: #400f6b;
+}
+button.op:hover{
+    background: #c598ff;
+    color: #260035;
+}
+#equals{
+    background: #ff5ea8;
+    color: white;
+}
+#equals:hover{
+    background: #ffd1ea;
+    color: #260035;
+}
+img{
+    width: 20px;
+    height: 20px;
+    filter: invert(1);
+}
+button:hover img{
+    filter: invert(0);
+}
+#historyBox{
+    position: fixed;
+    top: 20%;
+    right: 5%;
+    width: 260px;
+    max-height: 300px;
+    padding: 15px;
+    background: rgba(255, 255, 255, 0.95);
+    border: 2px solid #260035;
+    border-radius: 12px;
+    box-shadow: 6px 6px 15px rgba(0,0,0,0.25);
+    overflow-y: auto;
+    display: none;
+    z-index: 1000;
+    animation: pop 0.3s ease;
+}
+#historyBox p{
+    margin: 6px 0;
+    padding: 6px 8px;
+    background: #f6e6ff;
+    border-radius: 6px;
+    font-size: x-large;
+    color: #260035;
+    font-family: 'Montserrat', sans-serif;
+}
+@keyframes pop{
+    from{transform: scale(0.8); opacity: 0;}
+    to{transform: scale(1); opacity: 1;}
+}
+#historyHeader{
+    font-weight: bold;
+    padding: 6px;
+    cursor: move;
+    background: #260035;
+    color: white;
+    border-radius: 8px 8px 0 0;
+    margin: -15px -15px 10px -15px;
+    text-align: center;
+}
+#clearHistory{
+    width: 100%;
+    margin-top: 10px;
+    padding: 6px;
+    font-size: 14px;
+}
