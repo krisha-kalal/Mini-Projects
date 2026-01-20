@@ -1,0 +1,115 @@
+body {
+    min-height: 100vh;
+    background: linear-gradient(135deg, #fe9292, #86b0ff, violet);
+    font-family: 'Comic Sans MS', cursive;
+    position: relative;
+    overflow: hidden;
+}
+#date {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    font-size: 26px;
+    color: black;
+    display: block;
+    text-align: center;
+    font-weight: bold;
+}
+#timer {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    font-size: 28px;
+    transform: translate(-50%, -50%);
+    background: #ffffff;
+    padding: 35px 45px;
+    border-radius: 24px;
+    border: #000000 solid 3px;
+    width: 430px;
+    text-align: center;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.55);
+}
+#display {
+    font-size: 96px;
+    font-weight: bold;
+    margin: 15px 0 25px;
+    padding: 10px 0;
+    color: white;
+    border-radius: 16px;
+    background: #000000;
+}
+.controls {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+button {
+    padding: 8px 16px;
+    border-radius: 10px;
+    border: none;
+    font-weight: bold;
+    background: #b1b9ff;
+    color: #000000;
+    font-size: 18px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+button:hover {
+    transform: translateY(-2px);
+    background: #9290ff;
+}
+#right-panel {
+    position: absolute;
+    right: 30px;
+    bottom: 30px;
+    text-align: right;
+}
+#msg {
+    font-size: 26px;
+    font-weight: bold;
+    margin-bottom: 8px;
+    display: block;
+    text-align: center;
+}
+#lottie-box {
+    width: 260px;
+    height: 260px;
+    display: block;
+}
+#settings-popup {
+    position: fixed;
+    top: 120px;
+    left: 120px;
+    width: 260px;
+    background: white;
+    border: 2px solid black;
+    border-radius: 12px;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.4);
+    display: none;
+    z-index: 1000;
+}
+#settings-header {
+    padding: 10px;
+    background: #b1b9ff;
+    cursor: move;
+    font-weight: bold;
+    border-bottom: 2px solid black;
+    border-radius: 10px 10px 0 0;
+}
+.settings-body {
+    padding: 15px;
+    text-align: center;
+}
+.settings-body input {
+    width: 100px;
+    padding: 6px;
+    font-size: large;
+    background-color: #ffd1d1;
+    border-radius: 8px;
+    border: 1px solid #ffd1d1;
+    text-align: center;
+    outline: none;
+    color: black;
+    margin-bottom: 10px;
+}
