@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leafloom</title>
+    <style>
+        .about-hero{
+            background:
+            linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)),
+            url("https://plus.unsplash.com/premium_photo-1675127366598-f6c344e5233b?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8Z3JlZW58ZW58MHx8MHx8fDA%3D");
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            min-height: 89vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            text-align: center;
+            padding: 80px 8%;
+            color: white;
+        }
+        .about-hero span {
+            font-size: 20px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-weight: 600;
+            display: inline-block;
+            margin-bottom: 15px;
+        }
+        .about-hero h1 {
+            font-family: 'Poppins';
+            font-size: 56px;
+            font-weight: 400;
+            line-height: 1.2;
+            max-width: 1000px;
+            margin: 0 auto 20px auto;
+            letter-spacing: -0.5px;
+        }
+        .about-hero p {
+            font-size: 18px;
+            color: var(--accent-bg);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        .img-container {
+        position: relative;
+    }
+    .wishlist-btn {
+        position: absolute;
+        top: 15px;
+        right: 15px;
+        background: rgba(255, 255, 255, 0.9);
+        border: none;
+        border-radius: 50%;
+        width: 38px;
+        height: 38px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        transition: all 0.2s ease-in-out;
+        z-index: 10;
+        padding: 0;
+        color: #666;
+    }
+    .wishlist-btn:hover {
+        transform: scale(1.1);
+        background: #ffffff;
+        color: #dc3545; 
+    }
+    .wishlist-btn.active {
+        color: #dc3545;
+    }
+    .wishlist-btn.active svg {
+        fill: #dc3545;
+    }
+    .product-info h3 a {
+        color: inherit;
+        text-decoration: none;
+        transition: color 0.2s;
+    }
+    .product-info h3 a:hover {
+        color: #113329;
+    }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">Leafloom</div>
+        <form class="search-form">
+            <div class="search-box">
+                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24">
+                <path fill="currentColor" d="M10.5 2a8.5 8.5 0 1 0 5.262 15.176l3.652 3.652a1 1 0 0 0 1.414-1.414l-3.652-3.652A8.5 8.5 0 0 0 10.5 2M4 10.5a6.5 6.5 0 1 1 13 0a6.5 6.5 0 0 1-13 0"/></svg>
+                <input type="text" placeholder="Search for plants, pots, and more..." class="search-bar">
+            </div>
+        </form>
+        <nav>
+            <a href="home.html"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="M10 19v-5h4v5c0 .55.45 1 1 1h3c.55 0 1-.45 1-1v-7h1.7c.46 0 .68-.57.33-.87L12.67 3.6c-.38-.34-.96-.34-1.34 0l-8.36 7.53c-.34.3-.13.87.33.87H5v7c0 .55.45 1 1 1h3c.55 0 1-.45 1-1"/></svg></a>
+            <a href="collections.html"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.5"><path stroke-linejoin="round" d="M4 9h16l-.835 9.181A2 2 0 0 1 17.174 20H6.826a2 2 0 0 1-1.991-1.819z"/><path stroke-linecap="round" d="M8 11V8a4 4 0 1 1 8 0v3"/></g></svg></a>
+            <a href="profile.html"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="M12 4a4 4 0 0 1 4 4a4 4 0 0 1-4 4a4 4 0 0 1-4-4a4 4 0 0 1 4-4m0 10c4.42 0 8 1.79 8 4v2H4v-2c0-2.21 3.58-4 8-4"/></svg></a>
+            <a href="#"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24"><path fill="currentColor" fill-rule="evenodd" d="M5.624 4.424C3.965 5.182 2.75 6.986 2.75 9.137c0 2.197.9 3.891 2.188 5.343c1.063 1.196 2.349 2.188 3.603 3.154q.448.345.885.688c.526.415.995.778 1.448 1.043s.816.385 1.126.385s.674-.12 1.126-.385c.453-.265.922-.628 1.448-1.043q.437-.344.885-.687c1.254-.968 2.54-1.959 3.603-3.155c1.289-1.452 2.188-3.146 2.188-5.343c0-2.15-1.215-3.955-2.874-4.713c-1.612-.737-3.778-.542-5.836 1.597a.75.75 0 0 1-1.08 0C9.402 3.882 7.236 3.687 5.624 4.424M12 4.46C9.688 2.39 7.099 2.1 5 3.059C2.786 4.074 1.25 6.426 1.25 9.138c0 2.665 1.11 4.699 2.567 6.339c1.166 1.313 2.593 2.412 3.854 3.382q.43.33.826.642c.513.404 1.063.834 1.62 1.16s1.193.59 1.883.59s1.326-.265 1.883-.59c.558-.326 1.107-.756 1.62-1.16q.396-.312.826-.642c1.26-.97 2.688-2.07 3.854-3.382c1.457-1.64 2.567-3.674 2.567-6.339c0-2.712-1.535-5.064-3.75-6.077c-2.099-.96-4.688-.67-7 1.399" clip-rule="evenodd"/></svg></a>
+        </nav>
+        <a href="cart.html" class="cart-btn">Cart (<span id="cart-count">0</span>)</a>
+    </header>
+    </nav>
+        <section class="about-hero">
+            <span>Cultivating Spaces</span>
+            <h1>We bring nature close to urban homes with intent and care.</h1>
+            <p>Leafloom is a premium botanical studio crafting healthy architectural companion plants engineered to thrive indoors.</p>
+        </section>
+    <div class="section-header">
+    <div class="section-title">
+        <span>New Arrivals</span>
+        <h2>Most Loved This Week</h2>
+    </div>
+    <a href="collections.html" style="color: #1f5422; font-weight: 700;">View All Products →</a>
+</div>
+
+<section class="products-grid">
+    <!-- Plant Item 1: Monstera -->
+    <article class="product-card" data-key="monstera">
+        <div class="img-container">
+            <span class="badge">Popular</span>
+            <button class="wishlist-btn" onclick="toggleLocalWishlist(this, 'monstera')" aria-label="Add to wishlist">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg>
+            </button>
+            <a href="product_details.html?plant=monstera">
+                <img src="https://images.unsplash.com/photo-1545241047-6083a3684587?auto=format&fit=crop&q=80&w=600" alt="Monstera Deliciosa">
+            </a>
+        </div>
+        <div class="product-info">
+            <h3><a href="product_details.html?plant=monstera">Monstera Deliciosa</a></h3>
+            <p style="color:#888; font-size:14px">Large | Easy Care</p>
+            <div class="product-meta">
+                <span class="price">₹899</span>
+                <button class="add-btn" onclick="addDirectToCart('monstera')">+</button>
+            </div>
+        </div>
+    </article>
+
+    <!-- Plant Item 2: Snake Plant -->
+    <article class="product-card" data-key="snake">
+        <div class="img-container">
+            <button class="wishlist-btn" onclick="toggleLocalWishlist(this, 'snake')" aria-label="Add to wishlist">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg>
+            </button>
+            <a href="product_details.html?plant=snake">
+                <img src="https://images.unsplash.com/photo-1501004318641-b39e6451bec6?auto=format&fit=crop&q=80&w=600" alt="Snake Plant">
+            </a>
+        </div>
+        <div class="product-info">
+            <h3><a href="product_details.html?plant=snake">Snake Plant</a></h3>
+            <p style="color:#888; font-size:14px">Medium | Air Purifier</p>
+            <div class="product-meta">
+                <span class="price">₹699</span>
+                <button class="add-btn" onclick="addDirectToCart('snake')">+</button>
+            </div>
+        </div>
+    </article>
+    <article class="product-card" data-key="peace-lily">
+        <div class="img-container">
+            <button class="wishlist-btn" onclick="toggleLocalWishlist(this, 'peace-lily')" aria-label="Add to wishlist">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg>
+            </button>
+            <a href="product_details.html?plant=peace-lily">
+                <img src="https://images.unsplash.com/photo-1512428813834-c702c7702b78?auto=format&fit=crop&q=80&w=600" alt="Peace Lily">
+            </a>
+        </div>
+        <div class="product-info">
+            <h3><a href="product_details.html?plant=peace-lily">Peace Lily</a></h3>
+            <p style="color:#888; font-size:14px">Small | Flowering</p>
+            <div class="product-meta">
+                <span class="price">₹999</span>
+                <button class="add-btn" onclick="addDirectToCart('peace-lily')">+</button>
+            </div>
+        </div>
+    </article>
+</section>
+    <section class="stats-banner">
+        <div class="stat-item">
+            <h3 class="counter" data-target="5000">0</h3>
+            <p>Customers</p>
+        </div>
+        <div class="stat-item">
+            <h3 class="counter" data-target="150">0</h3>
+            <p>Varieties</p>
+        </div>
+        <div class="stat-item">
+            <h3 class="counter" data-target="30">0</h3>
+            <p>Cities Delivered</p>
+        </div>
+    </section>
+    <section id="faqs" class="faq-section">
+        <h2 style="text-align: center; margin-bottom: 20px; font-size: 36px; font-weight: 600;">Got Questions?</h2>
+        <details class="faq-item">
+            <summary>How do you ensure plants arrive healthy? <span>↓</span></summary>
+            <p>We use specially designed breathable eco-packaging that secures the pot and protects the leaves during transit.</p>
+        </details>
+        <details class="faq-item">
+            <summary>What is your return policy? <span>↓</span></summary>
+            <p>If your plant arrives damaged or dies within 14 days, we send a replacement free of charge. No questions asked.</p>
+        </details>
+        <details class="faq-item">
+            <summary>Do you offer bulk discounts for offices? <span>↓</span></summary>
+            <p>Yes! Contact our corporate team for customized greening solutions for your workspace.</p>
+        </details>
+        <details class="faq-item">
+            <summary>Can I change or cancel my order? <span>↓</span></summary>
+            <p>Orders can be modified or canceled within 2 hours of placement. Please contact our support team immediately.</p>
+        </details>
+        <details class="faq-item">
+            <summary>Do you provide care instructions? <span>↓</span></summary>
+            <p>Yes, every plant comes with a care card that includes watering, sunlight, and maintenance tips to help your plant thrive.</p>
+        </details>
+        <details class="faq-item">
+            <summary>Are your plants pet-friendly? <span>↓</span></summary>
+            <p>Some of our plants are pet-friendly, while others may be toxic to pets. Please check the product description for each plant's safety information.</p>
+        </details>
+        <details class="faq-item">
+            <summary>How long does delivery take? <span>↓</span></summary>
+            <p>Standard delivery takes 3-5 business days, while express options are available for faster delivery. Delivery times may vary based on location.</p>
+        </details>
+    </section>
+    <footer>
+        <div class="footer-grid">
+            <div class="footer-col">
+                <span class="footer-logo">Leafloom</span>
+                <p style="color: #999; margin-bottom: 20px;">Transforming living spaces with soul and soil since 2021.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Shop</h4>
+                <ul>
+                    <li><a href="#">Indoor Plants</a></li>
+                    <li><a href="#">Ceramic Pots</a></li>
+                    <li><a href="#">Plant Care Kits</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="login.html">Login</a></li>
+                    <li><a href="home.html#faqs">FAQs</a></li>
+                    <li><a href="about_us.html">About Us</a></li>
+                    <li><a href="shipping_policy.html">Shipping Policy</a></li>
+                    <li><a href="contact_us.html">Contact Us</a></li>
+                </ul>
+            </div>
+            <div class="footer-col newsletter">
+                <h4>Stay Green</h4>
+                <p style="color: #999; font-size: 14px; margin-bottom: 15px;">Get plant care tips and weekly deals.</p>
+                <input type="email" placeholder="Your email address">
+                <button class="btn-primary" style="width: 100%;">Join the Club</button>
+            </div>
+        </div>
+        <div style="text-align: center; border-top: 1px solid #222; padding-top: 30px; color: #555; font-size: 13px;">
+            © 2026 Leafloom Greenery Pvt Ltd. All rights reserved.
+        </div>
+    </footer>
+<script src="script.js"></script>
+</body>
+</html>
